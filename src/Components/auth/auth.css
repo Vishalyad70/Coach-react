@@ -1,0 +1,179 @@
+.login_box .grey_box {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 100vh;
+}
+
+.height_one {
+    height: initial !important;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.reg_box {
+    height: 100% !important;
+    padding-bottom: 50px;
+}
+
+.sign_btn {
+    padding: 18px 30px;
+    background-color: #F4A79C;
+    text-align: center;
+    border-radius: 30px;
+    color: #fff !important;
+    text-decoration: none;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all .3s ease-in;
+}
+
+.sign_btn:hover {
+    background-color: #334A52;
+}
+
+.login_box .grey_box .log_img {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.login_box .grey_box .log_img img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    object-position: center;
+}
+
+.content_box {
+    background-color: #fff;
+    border-radius: 20PX;
+    box-shadow: 0px 0px 16px rgba(189, 189, 189, 0.25);
+    padding: 30PX;
+    width: 100%;
+    max-width: 600px;
+}
+
+.login_box .grey_box .content_box .title_box {
+    margin-bottom: 30px;
+}
+
+.login_box .grey_box .content_box .title_box h5 {
+    font-size: 35px;
+    color: #F4A79C;
+    font-weight: 700;
+}
+
+.login_box .grey_box .content_box .title_box p {
+    color: #334A52;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+form {
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+label {
+    font-size: 16px;
+    font-weight: 400;
+    color: #334A52;
+}
+
+.form_weight {
+    position: relative;
+}
+
+.form_weight input {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: #fff;
+    box-shadow: 0px 4px 22px rgba(8, 15, 52, 0.03);
+    border-color: #EFF0F6;
+    padding-left: 10%;
+    border-radius: 8px;
+}
+
+.form_weight input::placeholder {
+    color: #5B5B5B;
+}
+
+input:focus {
+    box-shadow: none !important;
+    border-color: #F4A79C;
+}
+
+.form_weight svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+    font-size: 30px;
+    color: #F4A79C;
+}
+
+.forgot_pass {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    font-size: 14px;
+}
+
+.forgot_pass .form-check-input:checked {
+    background-color: #F4A79C;
+}
+
+.forgot_pass .forgot_link {
+    color: #F4A79C !important;
+}
+
+.sign_up {
+    margin-bottom: 0px;
+}
+
+.sign_up {
+    color: #787878;
+}
+
+.forgot_pass .forgot_link:hover,
+.sign_up a:hover {
+    text-decoration: none;
+    color: #F4A79C;
+}
+
+.sign_up a {
+    color: #F4A79C !important;
+    font-weight: 600;
+}
+
+
+/*media Queries */
+
+@media only screen and (max-width:767px) {
+    .form_weight input {
+        padding-left: 14%;
+    }
+}
+
+@media only screen and (max-width:575px) {
+    .form_weight input {
+        padding-left: 18%;
+    }
+    .login_box .grey_box .content_box .title_box p {
+        font-size: 14px;
+    }
+    .login_box .grey_box .content_box .title_box h5 {
+        font-size: 28px;
+    }
+    label,
+    .form_weight input::placeholder {
+        font-size: 14px;
+    }
+    .sign_btn {
+        font-size: 18px;
+    }
+}
