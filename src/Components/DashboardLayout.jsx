@@ -1,40 +1,37 @@
-import React from 'react';
+import React from "react";
 import "./dblayout.css";
-import Sidenav from './dashboard/Sidenav';
-import Dashboard from './dashboard/Dashboard';
+import Sidenav from "./dashboard/Sidenav";
+import Dashboard from "./dashboard/Dashboard";
 import { Route, withRouter } from "react-router";
-import { Header } from './dashboard/Header';
-import UsersList from './dashboard/UsersList';
+import { Header } from "./dashboard/Header";
+import UsersList from "./dashboard/UsersList";
 
-import CoachList from "./dashboard/CoachList"
+import CoachList from "./dashboard/CoachList";
 
 import { Container, Row, Col } from "react-bootstrap";
 
-
-
 const DashboardLayout = () => {
-
   return (
-    <div className='dblayout'>
+    <div className="dblayout">
       <Sidenav />
       <div className="side_wrapper">
         <Container fluid>
           <Row>
             <Col>
-            <Header/>
+              <Header />
             </Col>
           </Row>
 
           <Row>
             <Col>
-              <Route exact path="/dashboard" component={Dashboard} />{" "}
-              <Route exact path="/dashboard/Coachlist" component={CoachList} />{" "}
-              <Route exact path="/dashboard/Userlist" component={UsersList} />{" "}
-
+              <Route exact path="/dashboard" component={Dashboard} />
+              <Route exact path="/dashboard/coach-list" component={CoachList} />
+              <Route exact path="/dashboard/user-list" component={UsersList} />
             </Col>
           </Row>
-        </Container></div>
+        </Container>
+      </div>
     </div>
-  )
+  );
 };
 export default withRouter(DashboardLayout);

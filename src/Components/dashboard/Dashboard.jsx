@@ -1,55 +1,45 @@
-import React from 'react';
+import React from "react";
 import "./dashboard.css";
-import { withRouter } from 'react-router';
-import {Row, Col} from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
+import { useSelector, useDispatch } from "react-redux";
+import { DASHBOARD_COUNTS } from "../../store/common/constants";
+import { useEffect } from "react";
+import { getCount } from "../../store/actions/userAction";
 
- const Dashboard = () => {
+const Dashboard = () => {
+  const count = useSelector((state) => state.dashboard);
+  const column_size = DASHBOARD_COUNTS.length > 2 ? 4 : 6;
+  const disptach = useDispatch();
+  useEffect(() => {
+    disptach(getCount());
+  }, [disptach]);
+
   return (
-    <div className='db_main'>
+    <div className="db_main">
       <Row>
-        <Col><h5 className='title_word mb-4'>Dashboard</h5></Col>
-        
+        <Col>
+          <h5 className="title_word mb-4">Dashboard</h5>
+        </Col>
       </Row>
       <Row>
-        <Col lg={4}>
-          <div className="status_box">
-            <div className="status">
-              <span><img src="./images/users.svg" alt="" /></span>
-              <h5>Total no. of users</h5>
-            </div>
-            <div className="nim_status">
-              <h5>1500</h5>
-            </div>
-
-          </div>
-        </Col>
-        <Col lg={4}>
-          <div className="status_box">
-            <div className="status">
-              <span><img src="./images/users.svg" alt="" /></span>
-              <h5>Total no. of users</h5>
-            </div>
-            <div className="nim_status">
-              <h5>1500</h5>
-            </div>
-
-          </div>
-        </Col>
-        <Col lg={4}>
-          <div className="status_box">
-            <div className="status">
-              <span><img src="./images/users.svg" alt="" /></span>
-              <h5>Total no. of users</h5>
-            </div>
-            <div className="nim_status">
-              <h5>1500</h5>
-            </div>
-
-          </div>
-        </Col>
+        {DASHBOARD_COUNTS.length > 0 &&
+          DASHBOARD_COUNTS.map((list) => (
+            <Col lg={column_size} key={list.id}>
+              <div className="status_box">
+                <div className="status">
+                  <span>
+                    <img src={list.icon} alt="" />
+                  </span>
+                  <h5>{list.title}</h5>
+                </div>
+                <div className="nim_status">
+                  <h5>{count[list.dataKey]}</h5>
+                </div>
+              </div>
+            </Col>
+          ))}
       </Row>
-  
     </div>
-  )
-}
-export default (withRouter(Dashboard));
+  );
+};
+export default Dashboard;

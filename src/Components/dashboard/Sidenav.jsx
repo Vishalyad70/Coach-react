@@ -1,22 +1,22 @@
-import React from 'react';
+import React from "react";
 import "./dashboard.css";
-import { Link } from 'react-router-dom';
 import { NavLink, withRouter } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logout } from "../../store/actions/authAction";
 
-const Sidenav = () => {
- return (
-    <div className='side_nav'>
+const Sidenav = ({ history }) => {
+  const dispatch = useDispatch();
+  return (
+    <div className="side_nav">
       <div className="nav_side">
         <div className="logo_box">
-
-
           <div className="log_img">
             <img src="./images/log_dashboard.svg" alt="" />
           </div>
         </div>
       </div>
       <ul>
-        <NavLink to="/dashboard" exact >
+        <NavLink to="/dashboard" exact>
           <li>
             <span>
               <img src="/images/dashboard.svg" alt="" />
@@ -24,7 +24,7 @@ const Sidenav = () => {
             Dashboard
           </li>
         </NavLink>
-        <NavLink to="/dashboard/Coachlist" exact >
+        <NavLink to="/dashboard/coach-list" exact>
           <li>
             <span>
               <img src="/images/coach.svg" alt="" />
@@ -32,7 +32,7 @@ const Sidenav = () => {
             Coach List
           </li>
         </NavLink>
-        <NavLink to="/dashboard/Userlist" exact >
+        <NavLink to="/dashboard/user-list" exact>
           <li>
             <span>
               <img src="/images/users.svg" alt="" />
@@ -40,25 +40,23 @@ const Sidenav = () => {
             Users List
           </li>
         </NavLink>
-        <NavLink to="/dashboard/appointment" exact >
+        <NavLink to="/dashboard/appointment" exact>
           <li>
             <span>
               <img src="/images/appoinment.svg" alt="" />
             </span>
-           Appointments
+            Appointments
           </li>
         </NavLink>
-        <Link to="/">
-          <li>
 
-            <span>
-              <img src="./images/logout.svg" alt="" /></span>Logout
-          </li>
-        </Link>
+        <li onClick={() => dispatch(logout(history))}>
+          <span>
+            <img src="./images/logout.svg" alt="" />
+          </span>
+          Logout
+        </li>
       </ul>
-
-
     </div>
-  )
-}
-export default (withRouter(Sidenav));
+  );
+};
+export default withRouter(Sidenav);
