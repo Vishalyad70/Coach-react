@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { DASHBOARD_COUNTS } from "../../store/common/constants";
 import { useEffect } from "react";
 import { getCount } from "../../store/actions/userAction";
+import {  withRouter } from "react-router";
 
 const Dashboard = () => {
   const count = useSelector((state) => state.dashboard);
@@ -42,4 +43,4 @@ const Dashboard = () => {
     </div>
   );
 };
-export default Dashboard;
+export default withRouter(Dashboard);

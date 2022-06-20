@@ -7,6 +7,8 @@ import { v4 as uuidv4 } from "uuid";
 import Paginate from "./Paginate";
 import { RESET_USER_LIST } from "../../store/common/types";
 import SiteLoader from "../SiteLoader/SiteLoader";
+import {  withRouter } from "react-router";
+import { Link } from "react-router-dom";
 
 const UsersList = () => {
   const userState = useSelector((state) => state.user);
@@ -61,7 +63,8 @@ const UsersList = () => {
                           <td>24</td>
 
                           <td>
-                            <button className="view_btn">View Details</button>
+                            {/* <button className="view_btn">View Details</button> */}
+                            <Link className="view_btn" to="/dashboard/coach-list/userdetails">View Details</Link>
                           </td>
                           <td>
                             <span className="delete">
@@ -97,4 +100,4 @@ const UsersList = () => {
     </>
   );
 };
-export default UsersList;
+export default withRouter(UsersList);

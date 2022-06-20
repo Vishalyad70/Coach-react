@@ -39,7 +39,7 @@ const DASHBOARD_COUNTS = [{
         icon: "/images/coach.svg",
     },
     {
-        id: 2,
+        id: 3,
         dataKey: "totalAppoinments",
         title: "Total no. of appoinments",
         link: "",

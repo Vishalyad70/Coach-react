@@ -9,6 +9,8 @@ import UsersList from "./dashboard/UsersList";
 import CoachList from "./dashboard/CoachList";
 
 import { Container, Row, Col } from "react-bootstrap";
+import  Coachdetails  from "./dashboard/Coachdetails";
+import Userdetails from "./dashboard/Userdetails";
 
 const DashboardLayout = () => {
   return (
@@ -27,6 +29,9 @@ const DashboardLayout = () => {
               <Route exact path="/dashboard" component={Dashboard} />
               <Route exact path="/dashboard/coach-list" component={CoachList} />
               <Route exact path="/dashboard/user-list" component={UsersList} />
+              <Route exact path="/dashboard/coach-list/coachdetails" component={Coachdetails} />
+              <Route exact path="/dashboard/coach-list/userdetails" component={Userdetails} />
+
             </Col>
           </Row>
         </Container>

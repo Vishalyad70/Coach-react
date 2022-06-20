@@ -7,6 +7,8 @@ import { v4 as uuidv4 } from "uuid";
 import Paginate from "./Paginate";
 import { RESET_COACH_LIST } from "../../store/common/types";
 import SiteLoader from "../SiteLoader/SiteLoader";
+import { Link } from "react-router-dom";
+import {  withRouter } from "react-router";
 
 const CoachList = () => {
   const coachState = useSelector((state) => state.coach);
@@ -61,7 +63,8 @@ const CoachList = () => {
                           <td>{user.Certification_title}</td>
                           <td>{user.Country}</td>
                           <td>
-                            <button className="view_btn">View Details</button>
+                            {/* <button className="view_btn">View Details</button> */}
+                            <Link className="view_btn" to="/dashboard/coach-list/coachdetails">View Details</Link>
                           </td>
                           <td>
                             <span className="delete">
@@ -97,4 +100,4 @@ const CoachList = () => {
     </>
   );
 };
-export default CoachList;
+export default withRouter(CoachList) ;
