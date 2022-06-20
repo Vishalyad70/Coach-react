@@ -56,7 +56,7 @@ const ChangePassword = ({ changePassword, submitting }) => {
                               onChange={handleChange}
                               value={values.temporary_pass}
                             />
-                            <Icon icon="bx:user" />
+                            <Icon icon="fluent:lock-closed-32-regular" />
                           </div>
                           <ErrorMessage
                             name="temporary_pass"

@@ -28,6 +28,8 @@
     font-size: 20px;
     text-transform: uppercase;
     font-weight: 600;
+    border: none;
+    width: 100%;
     transition: all .3s ease-in;
 }
 
@@ -148,6 +150,21 @@ input:focus {
 .sign_up a {
     color: #F4A79C !important;
     font-weight: 600;
+}
+
+.form-check-label {
+    margin-left: 12px;
+}
+
+.err_red {
+    color: red;
+    margin-top: 12px;
+    display: block;
+}
+
+.form-label {
+    margin-bottom: 12px;
+    display: block;
 }
 
 

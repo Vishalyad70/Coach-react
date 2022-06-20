@@ -49,7 +49,7 @@ const Sidenav = ({ history }) => {
           </li>
         </NavLink>
 
-        <li onClick={() => dispatch(logout(history))}>
+        <li className="logout" onClick={() => dispatch(logout(history))}>
           <span>
             <img src="./images/logout.svg" alt="" />
           </span>

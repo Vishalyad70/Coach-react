@@ -89,13 +89,16 @@ const Login = ({ login, submitting }) => {
                           <ErrorMessage name="password" component={TextError} />
                         </Form.Group>
                         <div className="forgot_pass">
-                          <Field type="checkbox" name="rememberMe" />
+                         <div className="check_box">
+                         <Field type="checkbox" name="rememberMe" />
                           <label
                             htmlFor="rememberMe"
                             className="form-check-label"
+                            
                           >
                             Remember me
                           </label>
+                         </div>
                           {/* <Form.Group controlId="formBasicCheckbox">
                             <Form.Check type="checkbox" label="Remember me" />
                           </Form.Group> */}
