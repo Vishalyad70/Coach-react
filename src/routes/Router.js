@@ -8,7 +8,7 @@ import ChangePassword from "../Components/auth/ChangePassword";
 import ProtectedRoute from "./ProtectedRoute";
 export const Router = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter >
       <Switch>
         <Route exact path="/" component={Login} />
         <Route exact path="/register" component={Register} />
